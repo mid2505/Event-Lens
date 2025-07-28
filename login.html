@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Event-Lens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <form id="login-form" class="auth-form">
+            <h2>Login to Event-Lens</h2>
+            <div id="error-message"></div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <!-- THIS IS NOW A SIMPLE LINK (STYLED AS A BUTTON) -->
+            <a href="http://localhost:5000/auth/microsoft/start" class="btn microsoft-btn">Login with Microsoft</a>
+            <p class="switch-form">
+                Don't have an account? <a href="signup.html">Sign Up</a>
+            </p>
+        </form>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

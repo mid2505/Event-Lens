@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Finalizing Login...</title>
+</head>
+<body>
+    <p>Please wait, finalizing your login...</p>
+    <script>
+        // This script runs on the frontend (port 5500)
+        // It reads the token and user data from the URL hash
+        const hash = window.location.hash.substring(1); // Remove the leading '#'
+        const params = new URLSearchParams(hash);
+
+        const token = params.get('token');
+        const user = params.get('user');
+
+        if (token && user) {
+            // Save them to localStorage for the correct origin (port 5500)
+            localStorage.setItem('token', token);
+            localStorage.setItem('user', user); // User is already a JSON string
+            
+            // Now that the token is saved correctly, redirect to the home page
+            window.location.href = '/home.html';
+        } else {
+            // If something went wrong, go back to the login page
+            alert('Authentication failed. Please try again.');
+            window.location.href = '/login.html';
+        }
+    </script>
+</body>
+</html>

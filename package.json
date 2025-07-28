@@ -1,0 +1,32 @@
+{
+  "name": "event-lens",
+  "version": "1.0.0",
+  "description": "This is our Mini project - III -> \"Event lens\", a photographers hiring site, with digital imaging.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mid2505/Event-Lens.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mid2505/Event-Lens/issues"
+  },
+  "homepage": "https://github.com/mid2505/Event-Lens#readme",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.2.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.16.5"
+  }
+}

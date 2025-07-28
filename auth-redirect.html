@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authenticating...</title>
+    <script src="https://alcdn.msauth.net/browser/2.37.0/js/msal-browser.min.js"></script>
+</head>
+<body>
+    <p>Please wait while we sign you in...</p>
+    <script>
+        // This script runs inside the popup on the redirect page.
+        // It initializes a minimal MSAL instance to handle the auth response.
+        const msalInstance = new msal.PublicClientApplication({
+            auth: {
+                // This MUST match the clientId from your main auth.js
+                clientId: "e1f98e1b-95e0-4da4-aa88-ae2f42cb2677"
+            }
+        });
+
+        // This is the key function. It processes the token from the URL,
+        // communicates the result to the main window, and allows the popup to close.
+        msalInstance.handleRedirectPromise().catch(err => {
+            console.error(err);
+            // You can optionally pass the error back to the main window here
+        });
+    </script>
+</body>
+</html>
