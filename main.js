@@ -1,3 +1,5 @@
+// Pothiraju - Main Application & Theme Module
+// Date: 5/11/2025
 // This file contains code that runs on ALL pages
 
 document.addEventListener('DOMContentLoaded', () => {
