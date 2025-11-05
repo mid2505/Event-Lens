@@ -1,3 +1,5 @@
+// Mallesh Kumar - Login Module
+// Date: 3/11/2025
 console.log("login.js loaded");
 import { API_BASE } from './config.js';
 
