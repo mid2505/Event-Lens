@@ -1,3 +1,5 @@
+// Pothiraju - Client Dashboard Module
+// Date: 5/11/2025
 import { API_BASE } from './config.js';
 
 document.addEventListener('DOMContentLoaded', () => {
