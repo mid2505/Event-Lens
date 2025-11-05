@@ -1,3 +1,5 @@
+// Mallesh Kumar - Gallery Module
+// Date: 3/11/2025
 import { API_BASE } from './config.js';
 
 document.addEventListener('DOMContentLoaded', async () => {

@@ -1,3 +1,5 @@
+// Mallesh Kumar - Registration Module
+// Date: 3/11/2025
 import { API_BASE } from './config.js';
 
 document.getElementById('register-form').addEventListener('submit', async (e) => {
