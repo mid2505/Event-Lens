@@ -1,0 +1,1374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* New Dark Theme based on your image */
+    --bg-color: #121212;
+    --card-bg: #1E1E1E;
+    --primary-text: #FFFFFF;
+    --secondary-text: #b3b3b3;
+    --accent-color: #8A2BE2; /* Vibrant Purple */
+    --border-color: #2D2D2D;
+    --header-bg: rgba(18, 18, 18, 0.8);
+}
+
+body.light-mode {
+    /* A corresponding light theme */
+    --bg-color: #F5F5F7;
+    --card-bg: #FFFFFF;
+    --primary-text: #1D1D1F;
+    --secondary-text: #6E6E73;
+    --accent-color: #6a0dad; /* A slightly deeper purple for light mode */
+    --border-color: #E5E5E5;
+    --header-bg: rgba(255, 255, 255, 0.8);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* This is the font from the image */
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.auth-form {
+    background-color: var(--card-bg);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.auth-form h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-form > p { /* Targets the "Welcome back!" subtitle */
+    color: var(--secondary-text);
+    margin-bottom: 2.5rem;
+}
+
+.auth-form .form-group {
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.auth-form .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.auth-form .form-group input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.auth-form .form-group input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.error-message {
+    color: #ef4444; /* A standard red for errors */
+    text-align: center;
+    margin-bottom: 1rem;
+    min-height: 1em; /* Prevents layout shift when message appears */
+}
+
+.auth-form .submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-form .submit-btn:hover {
+    filter: brightness(1.2);
+}
+
+.auth-switch {
+    margin-top: 2rem;
+    color: var(--secondary-text);
+}
+
+.auth-switch a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+/* ...existing code... */
+
+/* --- STYLES FOR INDEX.HTML --- */
+
+/* --- Header --- */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 1.5rem 5%;
+    background: var(--header-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--primary-text);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-text);
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease-out;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.auth-btn {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.auth-btn.secondary {
+    background-color: var(--card-bg);
+    color: var(--secondary-text);
+    border-color: var(--border-color);
+}
+
+.auth-btn:hover {
+    filter: brightness(1.2);
+}
+
+#theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* --- HEADER AUTH BUTTONS STYLES --- */
+/* This ensures the buttons in the top-right look correct */
+#auth-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#auth-links .nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+body.light-mode #auth-links .nav-link {
+    color: #333;
+}
+
+#auth-links .nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Styles the Logout button to match the theme */
+#auth-links .submit-btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+}
+
+/* --- Main Content & Sections --- */
+main {
+    padding-top: 80px; /* Space for the fixed header */
+}
+
+section {
+    padding: 5rem 5%;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-title-line {
+    font-size: clamp(2.5rem, 7vw, 6rem); /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--secondary-text);
+    margin-top: 1.5rem;
+    font-weight: 300;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Description Section --- */
+.description {
+    text-align: center;
+    max-width: 800px;
+    margin: -5rem auto 0 auto; /* Pulls it up slightly */
+}
+
+.description h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.description p {
+    color: var(--secondary-text);
+    line-height: 1.7;
+}
+
+/* --- Categories & How-it-works Sections --- */
+.categories h2, .how-it-works h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.category-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 350px;
+    display: block;
+    text-decoration: none;
+}
+
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-card .category-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+}
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.step-card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-card p {
+    color: var(--secondary-text);
+    line-height: 1.6;
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    margin: 0 5%;
+    padding: 4rem;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: var(--secondary-text);
+    margin-bottom: 2rem;
+}
+
+.contact-details h4 {
+    color: var(--secondary-text);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.contact-form h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.contact-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form .form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-text);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    font-size: 1rem;
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--accent-color);
+    color: #fff;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* --- Footer --- */
+footer {
+    padding: 2rem 5%;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--secondary-text);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hides nav links on smaller screens */
+    }
+    .contact-form .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+/* ...existing code... */
+
+/* --- STYLES FOR GALLERY.HTML --- */
+
+.gallery-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    padding-top: 120px; /* Space for fixed header */
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: capitalize; /* Ensures category name looks good */
+}
+
+.gallery-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-top: 0.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    aspect-ratio: 4 / 3; /* Creates a consistent photo shape */
+    background-color: var(--card-bg); /* Placeholder color while image loads */
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.photo-card .photographer-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.photo-card:hover .photographer-overlay {
+    transform: translateY(0);
+}
+
+.photographer-overlay img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    transform: none !important; /* Prevents double-scaling */
+    filter: none !important;
+}
+
+.photographer-overlay-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.photographer-overlay-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.gallery-empty-state {
+    grid-column: 1 / -1; /* Makes this span the full grid width */
+    text-align: center;
+    padding: 4rem;
+    color: var(--secondary-text);
+    background-color: var(--card-bg);
+    border-radius: 12px;
+}
+/* ...existing code... */
+
+/* --- STYLES FOR GALLERY PAGE (gallery.html) --- */
+
+.gallery-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+    padding-top: 120px; /* Space for fixed header */
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: capitalize; /* Ensures category name looks good */
+}
+
+.gallery-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-top: 0.5rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.photo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    aspect-ratio: 4 / 3; /* Creates a consistent photo shape */
+    background-color: var(--card-bg); /* Placeholder color while image loads */
+    display: block; /* Ensures the anchor tag behaves like a block */
+    text-decoration: none; /* Removes underline from the link */
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.9);
+}
+
+.photo-card .photographer-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.photo-card:hover .photographer-overlay {
+    transform: translateY(0);
+}
+
+.photographer-overlay img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    transform: none !important; /* Prevents double-scaling */
+    filter: none !important;
+}
+
+.photographer-overlay-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.photographer-overlay-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.gallery-empty-state {
+    grid-column: 1 / -1; /* Makes this span the full grid width */
+    text-align: center;
+    padding: 4rem;
+    color: var(--secondary-text);
+    background-color: var(--card-bg);
+    border-radius: 12px;
+}
+
+/* General error message style for JS-injected errors */
+.error-message {
+    color: #ff6b6b;
+    text-align: center;
+    width: 100%;
+    padding: 2rem;
+}
+
+/* --- FIX FOR GALLERY PAGE ALIGNMENT --- */
+
+/* This ensures the main container for the photos uses a grid layout,
+   just like the category cards on the home page. */
+#photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- STYLES FOR PHOTOGRAPHER PROFILE PAGE (photographer.html) --- */
+
+.photographer-page-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto; /* Changed from '2rem auto' */
+    padding: 120px 2rem 2rem; /* Added 120px top padding */
+}
+
+.photographer-sidebar {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.photographer-main {
+    flex: 3;
+    min-width: 300px;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    display: block;
+    border: 4px solid var(--primary-color-light);
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-location {
+    text-align: center;
+    color: #aaa;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.book-btn {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    background-color: #711ab3;
+    color: #fffdfd;
+    border: none;
+    border-radius: 40fpx;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: background-color 0.2s;
+}
+.book-btn:hover {
+    background-color: #be4917;
+}
+
+.sidebar-section {
+    margin-bottom: 2rem;
+}
+
+.sidebar-section h3 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #444;
+    padding-bottom: 0.5rem;
+}
+
+.about-text {
+    line-height: 1.6;
+    color: #ccc;
+}
+
+.specialties-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.specialty-tag {
+    background-color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .photographer-page_container {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+    .photographer-sidebar {
+        position: static; /* Disable sticky */
+        margin-bottom: 2rem;
+    }
+}/* ...existing code... */
+
+/* --- STYLES FOR ABOUT.HTML --- */
+
+/* --- About Page Hero --- */
+.hero-about {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5rem 5%;
+    background-color: var(--card-bg);
+}
+
+.hero-about h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* --- Our Mission Section --- */
+.our-mission {
+    padding: 5rem 5%;
+}
+
+.mission-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mission-text p {
+    color: var(--secondary-text);
+    line-height: 1.8;
+}
+
+.mission-image {
+    border-radius: 12px;
+    overflow: hidden; /* Ensures the image respects the border-radius */
+    height: 450px;
+}
+
+.mission-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the key fix: scales the image correctly */
+    transition: transform 0.4s ease;
+}
+
+.mission-image:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Meet the Team Section --- */
+.meet-the-team {
+    padding: 5rem 5%;
+    background-color: var(--bg-color);
+    text-align: center;
+}
+
+.meet-the-team h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.team-member-card {
+    background-color: var(--card-bg);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.team-member-img-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image container circular */
+    overflow: hidden;
+    margin: 0 auto 1.5rem auto;
+    border: 3px solid var(--border-color);
+}
+
+.team-member-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-card h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.team-member-card p {
+    color: var(--secondary-text);
+}
+
+/* --- Responsive adjustments for About Page --- */
+@media (max-width: 900px) {
+    .mission-content {
+        grid-template-columns: 1fr; /* Stack mission text and image */
+    }
+}
+/* ...existing code... */
+
+/* --- FINAL DASHBOARD STYLES --- */
+.dashboard-layout { display: flex; min-height: 100vh; background-color: var(--bg-color); }
+.dashboard-sidebar { width: 260px; background-color: var(--card-bg); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; padding: 1.5rem; flex-shrink: 0; }
+.sidebar-header .logo { padding-left: 0.5rem; margin-bottom: 2.5rem; display: block; }
+.sidebar-nav ul { list-style: none; }
+.sidebar-nav .nav-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; margin-bottom: 0.5rem; border-radius: 8px; text-decoration: none; color: var(--secondary-text); transition: all 0.3s ease; }
+.sidebar-nav .nav-item i { font-size: 1.4rem; }
+.sidebar-nav .nav-item:hover { background-color: var(--border-color); color: var(--primary-text); }
+.sidebar-nav .nav-item.active { background-color: var(--accent-color); color: #fff; font-weight: 500; }
+.sidebar-footer { margin-top: auto; }
+.sidebar-footer .logout-btn { width: 100%; display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; text-decoration: none; color: var(--secondary-text); transition: all 0.3s ease; background: none; border: none; font-family: inherit; font-size: 1rem; cursor: pointer; text-align: left; }
+.sidebar-footer .logout-btn:hover { background-color: var(--border-color); color: var(--primary-text); }
+.dashboard-main-content { flex-grow: 1; padding: 2rem 3rem; overflow-y: auto; }
+.dashboard-main-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.dashboard-main-header h1 { font-size: 2rem; font-weight: 600; }
+.header-user-profile { display: flex; align-items: center; gap: 1rem; }
+.header-user-profile span { font-weight: 500; }
+.header-user-profile img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.dashboard-panel { display: none; animation: fadeIn 0.5s ease; }
+.dashboard-panel.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.dashboard-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; margin-bottom: 2rem; }
+.dashboard-card h3 { font-size: 1.5rem; font-weight: 500; margin-bottom: 1.5rem; }
+.dashboard-card .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+.dashboard-card .form-group { margin-bottom: 1.5rem; }
+.dashboard-card label { display: block; color: var(--secondary-text); margin-bottom: 0.5rem; font-size: 0.9rem; }
+.dashboard-card input, .dashboard-card textarea { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--bg-color); color: var(--primary-text); font-family: inherit; font-size: 1rem; }
+.dashboard-card input[type="file"] { padding: 0.5rem; background-color: var(--border-color); }
+.dashboard-card .submit-btn { width: auto; padding: 0.8rem 2rem; font-size: 0.9rem; font-weight: 600; border-radius: 8px; border: none; background-color: var(--accent-color); color: #fff; cursor: pointer; transition: all 0.3s ease; margin-top: 1rem; }
+.dashboard-card .submit-btn:hover { filter: brightness(1.2); }
+.portfolio-management-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
+.portfolio-thumb { position: relative; aspect-ratio: 1 / 1; border-radius: 8px; overflow: hidden; }
+.portfolio-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.portfolio-thumb .delete-btn { position: absolute; top: 8px; right: 8px; background-color: rgba(239, 68, 68, 0.8); color: white; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; opacity: 0; transform: scale(0.8); transition: all 0.3s ease; }
+.portfolio-thumb:hover .delete-btn { opacity: 1; transform: scale(1); }
+@media (max-width: 768px) { .dashboard-card .form-grid { grid-template-columns: 1fr; } }
+/* --- BOOKING MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-content {
+    background-color: #222;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.hidden .modal-content {
+    transform: scale(0.9);
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.modal-content p {
+    margin-bottom: 1.5rem;
+    color: #aaa;
+}
+
+#booking-form .form-group {
+    margin-bottom: 1rem;
+}
+
+#booking-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+#booking-form input[type="date"],
+#booking-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-family: inherit;
+}
+
+#booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+/* --- CLIENT DASHBOARD STYLES --- */
+.dashboard-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.dashboard-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 2.5rem;
+}
+
+.bookings-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.booking-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: #2c2c2c;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary-color);
+    flex-wrap: wrap;
+}
+
+body.light-mode .booking-card {
+    background-color: #f0f0f0;
+}
+
+.booking-photographer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 2;
+    min-width: 200px;
+}
+
+.booking-photographer-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.booking-photographer-info span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.booking-details {
+    flex: 2;
+    min-width: 150px;
+}
+
+.booking-status-container {
+    flex: 1;
+    text-align: right;
+    min-width: 100px;
+}
+
+.booking-status {
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.status-pending { background-color: #f39c12; }
+.status-accepted { background-color: #2ecc71; }
+.status-declined { background-color: #e74c3c; }
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+}
+
+body.light-mode .empty-state {
+    background-color: #f0f0f0;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.empty-state p {
+    color: #aaa;
+    margin-bottom: 2rem;
+}
+
+/* --- LOGIN & REGISTER PAGE STYLES --- */
+/* This styles the entire login page */
+.form-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #2c2c2c;
+    padding: 2.5rem;
+    border-radius: 8px;
+}
+
+body.light-mode .form-container {
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+body.light-mode .form-group input[type="text"],
+body.light-mode .form-group input[type="email"],
+body.light-mode .form-group input[type="password"] {
+    background-color: #fff;
+    border-color: #ddd;
+    color: #333;
+}
+
+.form-container .submit-btn {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 1rem;
+    min-height: 1em;
+}
+
+.form-switch {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #aaa;
+}
+
+.form-switch a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+/* ...existing code... */
+
+/* --- IMPROVED REGISTER FORM UI --- */
+.role-selector .role-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.role-selector .role-option {
+    flex: 1;
+    display: block;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.role-selector .role-option input[type="radio"] {
+    display: none; /* Hide the default radio button */
+}
+
+.role-selector .role-option input[type="radio"]:checked + span {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.role-selector .role-option:has(input:checked) {
+    border-color: var(--accent-color);
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+.photographer-fields-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+}
+
+.photographer-fields-container:not(.hidden) {
+    max-height: 500px; /* A large enough value to show all content */
+    margin-top: 1.5rem;
+}
+
+.photographer-fields-container.hidden {
+    margin-top: 0;
+}
+
+.form-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-text);
+    margin-bottom: 1.5rem;
+}
+
+.form-divider::before,
+.form-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.form-divider:not(:empty)::after {
+    margin-left: .5em;
+}
+.photo-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.watermark-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.2s;
+}
+
+.watermark-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.watermark-tool {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.tool-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "image-watermark-app",
+  "version": "1.0.0",
+  "description": "Image watermarking tool",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.0",
+    "multer": "^1.4.4",
+    "sharp": "^0.34.4"
+  }
+}

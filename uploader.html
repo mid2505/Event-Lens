@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Photo Uploader</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .uploader-form { background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+        input, select, button { width: 100%; padding: 0.75rem; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem; }
+        button { background-color: #007bff; color: white; border: none; cursor: pointer; }
+        #status { margin-top: 1rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="uploader-form">
+        <h2>Upload New Photo</h2>
+        <form id="upload-form">
+            <div class="form-group">
+                <label for="photographerId">Photographer User ID</label>
+                <input type="text" id="photographerId" name="photographerId" required placeholder="Enter the MongoDB User ID of the photographer">
+            </div>
+            <div class="form-group">
+                <label for="title">Photo Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="Wedding">Wedding</option>
+                    <option value="Portrait">Portrait</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Food">Food</option>
+                    <option value="Advertising">Advertising</option>
+                    <option value="Cosmic">Cosmic</option>
+                    <option value="Cooking">Cooking</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="imageFile">Image File</label>
+                <input type="file" id="imageFile" name="imageFile" accept="image/*" required>
+            </div>
+            <button type="submit">Upload Photo</button>
+        </form>
+        <div id="status"></div>
+    </div>
+    <script type="module" src="uploader.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>

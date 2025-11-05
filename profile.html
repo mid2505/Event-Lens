@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Lens - Photographer Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="main-content">
+        <header>
+            <nav>
+                <div class="logo">Event Lens</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link-item">Home</a></li>
+                    <li><a href="photographers.html" class="nav-link-item">Photographers</a></li>
+                    <li><a href="about.html" class="nav-link-item">About</a></li>
+                    <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="auth-buttons">
+                        <button class="login-btn">Log In</button>
+                        <button class="signup-btn">Sign Up</button>
+                    </div>
+                    <button id="theme-toggle-btn">
+                        <i class="ri-sun-line" id="theme-icon"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="profile-header">
+                <div class="profile-info">
+                    <img id="photographer-avatar" src="" alt="Photographer" class="profile-avatar">
+                    <div class="profile-details">
+                        <h1 id="photographer-name">Photographer Name</h1>
+                        <p id="photographer-specialty">Wedding Photographer</p>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <i class="ri-star-fill"></i>
+                                <span id="photographer-rating">4.9</span>
+                                <span id="photographer-reviews">(127 reviews)</span>
+                            </div>
+                            <div class="stat">
+                                <i class="ri-map-pin-line"></i>
+                                <span id="photographer-location">New York, NY</span>
+                            </div>
+                        </div>
+                        <div class="profile-actions">
+                            <!-- Add id="book-now-btn" to this button -->
+                            <button id="book-now-btn" class="book-btn">Book Now</button>
+                            <button class="contact-btn">Contact</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="profile-content">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="portfolio">Portfolio</button>
+                    <button class="tab-btn" data-tab="about">About</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+
+                <div class="tab-content active" id="portfolio-tab">
+                    <div class="portfolio-grid" id="portfolio-container">
+                        <!-- Portfolio images will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="tab-content" id="about-tab">
+                    <div class="about-content">
+                        <h3>About Me</h3>
+                        <p id="photographer-bio">Professional photographer with over 5 years of experience...</p>
+                        
+                        <h3>Services</h3>
+                        <ul id="photographer-services">
+                            <li>Wedding Photography</li>
+                            <li>Engagement Sessions</li>
+                            <li>Portrait Photography</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="reviews-tab">
+                    <div class="reviews-container" id="reviews-container">
+                        <!-- Reviews will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p align="center">&copy; 2025 Event Lens. All Rights Reserved.</p><br>
+        </footer>
+    </div>
+
+    <!-- Add the new auth.js script BEFORE your page-specific script -->
+    <script type="module" src="main.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="profile.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>

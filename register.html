@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Event Lens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <form id="register-form" class="auth-form">
+            <h2>Create Your Account</h2>
+            <p>Join our community of clients and photographers.</p>
+
+            <!-- Basic Information -->
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <!-- Role Selector -->
+            <div class="form-group role-selector">
+                <label>I am a...</label>
+                <div class="role-options">
+                    <label class="role-option">
+                        <input type="radio" name="role" value="client" checked>
+                        <span>Client</span>
+                    </label>
+                    <label class="role-option">
+                        <input type="radio" name="role" value="photographer">
+                        <span>Photographer</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Photographer-Specific Fields (Initially Hidden) -->
+            <div id="photographer-fields" class="photographer-fields-container hidden">
+                <div class="form-divider">
+                    <span>Photographer Details</span>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Madurai, India">
+                </div>
+                <div class="form-group">
+                    <label for="specialties">Specialties (comma-separated)</label>
+                    <input type="text" id="specialties" name="specialties" placeholder="e.g., Wedding, Portrait, Sports">
+                </div>
+                <div class="form-group">
+                    <label for="hourlyRate">Hourly Rate (in your currency)</label>
+                    <input type="number" id="hourlyRate" name="hourlyRate" placeholder="e.g., 150">
+                </div>
+                <div class="form-group">
+                    <label for="bio">Short Bio / Tagline</label>
+                    <input type="text" id="bio" name="bio" placeholder="A one-line introduction.">
+                </div>
+            </div>
+
+            <div id="error-message" class="error-message"></div>
+            <button type="submit" class="submit-btn">Create Account</button>
+            <div class="auth-switch">
+                Already have an account? <a href="login.html">Log In</a>
+            </div>
+        </form>
+    </div>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>

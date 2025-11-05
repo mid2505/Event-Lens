@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Event Lens</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="auth.js" defer></script> <!-- Protects the page -->
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Event Lens</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="nav-right">
+                <!-- CORRECT BUTTONS FOR LOGGED-IN USER -->
+                <a href="dashboard.html" class="auth-btn secondary">My Dashboard</a>
+                <button onclick="logout()" class="auth-btn">Logout</button>
+                <button id="theme-toggle-btn"><i id="theme-icon" class="ri-sun-line"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-about">
+            <h1>Connecting Moments, Creating Memories.</h1>
+        </section>
+
+        <section class="our-mission">
+            <div class="mission-content">
+                <div class="mission-text">
+                    <h2>Our Mission</h2>
+                    <p>At Event Lens, our mission is to seamlessly connect clients with professional photographers who can capture the essence of their most important events. We believe that every moment is precious, and finding the right artist to preserve those memories should be simple, transparent, and inspiring.</p>
+                </div>
+                <div class="mission-image">
+                    <img src="/category images/travel.jpg" alt="Photographer capturing a moment">
+                </div>
+            </div>
+        </section>
+
+        <section class="meet-the-team">
+            <h2>Meet the Team</h2>
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-member-card">
+                    <div class="team-member-img-container">
+                        <img src="Logo-Suzuki.png" alt="Team member surya">
+                    </div>
+                    <h4>Surya Pandian M</h4>
+                    <p>23bcs121</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="team-member-card">
+                    <div class="team-member-img-container">
+                        <img src="PlayStation-Icon-Logo.wine.svg" alt="Team member pothi">
+                    </div>
+                    <h4>Pothiraju P V</h4>
+                    <p>23bcs112</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="team-member-card">
+                    <div class="team-member-img-container">
+                        <img src="mcdonalds-famous-logo.jpg" alt="Team member mallesh">
+                    </div>
+                    <h4>Mallesh Kumar R</h4>
+                    <p>23bcsl03</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- script.js contains the logout() function and theme toggle logic -->
+    <script type="module" src="script.js"></script>
+    <script type="module" src="config.js"></script>
+
+</body>
+</html>

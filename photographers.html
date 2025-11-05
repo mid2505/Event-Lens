@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="main-content">
+        <header>
+            <nav>
+                <a href="index.html" class="logo">Event Lens</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="nav-right">
+                    <button id="theme-toggle-btn"><i id="theme-icon" class="ri-sun-line"></i></button>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Container for the Two-Column Layout -->
+        <div class="profile-page-container">
+
+            <!-- Left Sidebar (Sticky) -->
+            <aside class="profile-sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-profile-pic">
+                        <img id="photographer-pic" src="" alt="Photographer">
+                    </div>
+                    <h1 id="photographer-name">Loading...</h1>
+                    <p id="photographer-location" class="location"><i class="ri-map-pin-line"></i> <span></span></p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <strong id="stat-photos">0</strong>
+                            <span>Photos</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong id="stat-likes">0</strong>
+                            <span>Likes</span>
+                        </div>
+                        <div class="stat-item">
+                            <strong id="stat-reviews">0</strong>
+                            <span>Reviews</span>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-actions">
+                        <button id="book-now-btn" class="book-now-btn">Book Now <span id="photographer-rate"></span></button>
+                        <button id="wishlist-btn" class="wishlist-btn"><i class="ri-heart-add-line"></i> Wishlist</button>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Specialties</h3>
+                        <div id="specialties-tags" class="specialties-tags"></div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3>Connect</h3>
+                        <div id="social-links" class="social-links"></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right Main Content (Scrollable) -->
+            <main class="profile-main-content">
+                <div class="profile-tabs">
+                    <button class="tab-link active" data-tab="portfolio">Portfolio</button>
+                    <button class="tab-link" data-tab="about">About</button>
+                </div>
+
+                <div class="tab-content active" id="portfolio">
+                    <div id="portfolio-grid" class="photo-grid"></div>
+                </div>
+
+                <div class="tab-content" id="about">
+                    <div class="about-section">
+                        <h3>My Story</h3>
+                        <p id="photographer-bio"></p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Booking Modal (Hidden by default) -->
+    <div id="booking-modal" class="modal-container">
+        <div class="modal-content">
+            <button class="modal-close-btn"><i class="ri-close-line"></i></button>
+            <h2>Book <span class="modal-photographer-name"></span></h2>
+            <form id="booking-form">
+                <!-- Form content from previous steps -->
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="photographer.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>

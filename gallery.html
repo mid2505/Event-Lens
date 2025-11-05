@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Event Lens</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="nav-right">
+                <!-- Auth buttons will be managed by auth.js -->
+            </div>
+        </nav>
+    </header>
+
+    <main class="gallery-main">
+        <h1 id="gallery-title">Category Photos</h1>
+        <div id="photo-grid" class="gallery-grid">
+            <!-- Photos will be loaded here -->
+        </div>
+    </main>
+
+    <!-- FIX: All scripts are now at the end of the body and are correctly typed as modules -->
+    <script type="module" src="config.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="gallery.js"></script>
+</body>
+</html>

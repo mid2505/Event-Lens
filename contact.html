@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Event Lens</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="loader"></div>
+
+    <div id="main-content">
+        <header>
+            <nav>
+                <div class="logo">Event Lens</div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="nav-link-item">Home</a></li>
+                    <li><a href="#" class="nav-link-item">Photographers</a></li>
+                    <li><a href="about.html" class="nav-link-item">About</a></li>
+                    <li><a href="contact.html" class="nav-link-item">Contact</a></li>
+                </ul>
+                <div class="nav-right">
+                    <div class="auth-buttons">
+                        <button class="login-btn">Log In</button>
+                        <button class="signup-btn">Sign Up</button>
+                    </div>
+                    <button id="theme-toggle-btn">
+                        <i class="ri-sun-line" id="theme-icon"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero-about">
+                <div class="hero-text">
+                    <h1 class="reveal-text">Let's Talk.</h1>
+                    <p class="hero-subtitle reveal-text">We're ready to help. Reach out to us or our developers directly.</p>
+                </div>
+            </section>
+
+            <section class="meet-the-team">
+                <h2 class="reveal-text">Our Developers</h2>
+                <div class="team-grid">
+                    <div class="team-member-card reveal-text">
+                        <div class="team-member-img-container">
+                            <img src="category images/portrait.jpg" alt="Surya Pandiyan">
+                        </div>
+                        <h4>Surya Pandiyan</h4>
+                        <p>Backend & Database Architect</p>
+                    </div>
+                    <div class="team-member-card reveal-text">
+                        <div class="team-member-img-container">
+                            <img src="category images/commercial.jpg" alt="Mallesh Kumar">
+                        </div>
+                        <h4>Mallesh Kumar</h4>
+                        <p>Frontend & UI/UX Specialist</p>
+                    </div>
+                    <div class="team-member-card reveal-text">
+                        <div class="team-member-img-container">
+                            <img src="category images/sports.jpg" alt="Pothiraju">
+                        </div>
+                        <h4>Pothiraju</h4>
+                        <p>Lead GSAP Animator</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="contact-info">
+                    <h2 class="reveal-text">Get in Touch</h2>
+                    <p class="reveal-text">We're here to help! Reach out with any questions or for personalized recommendations.</p>
+                    <div class="contact-details">
+                        <h4 class="reveal-text">Email Us</h4>
+                        <a href="mailto:connect@eventlens.me" class="reveal-text">connect@eventlens.me</a>
+                        <h4 class="reveal-text">Call Us</h4>
+                        <a href="tel:+1234567890" class="reveal-text">+1 (234) 567-890</a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <h3 class="reveal-text">Contact us</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First name</label>
+                            <input type="text" id="first-name" name="first-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last name</label>
+                            <input type="text" id="last-name" name="last-name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Event Lens. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>

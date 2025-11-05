@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Lens - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="main-content">
+<header>
+    <nav>
+        <!-- Add the 'nav-home-link' class here -->
+        <a href="index.html" class="logo nav-home-link">Event Lens</a>
+        <div class="nav-links">
+            <!-- And also here -->
+            <a href="#home" class="nav-home-link">Home</a>
+            <a href="about.html">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-right">
+            <div id="auth-links">
+                <!-- STATIC BUTTONS: Hidden by default, shown by auth.js -->
+                <a id="dashboard-btn" class="nav-link" style="display: none;">My Dashboard</a>
+                <button id="logout-btn" class="submit-btn" style="display: none;">Logout</button>
+                <a id="login-btn" href="login.html" class="nav-link" style="display: none;">Login</a>
+                <a id="signup-btn" href="register.html" class="submit-btn" style="display: none;">Sign Up</a>
+            </div>
+            <button id="theme-toggle-btn"><i class="ri-sun-line"></i></button>
+        </div>
+    </nav>
+</header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-text">
+                    <h1 class="hero-title-line"><span>Capture</span> <span>Every</span></h1>
+                    <h1 class="hero-title-line"><span>Moment,</span> <span>Perfectly.</span></h1>
+                    <p class="hero-subtitle">Find and book professional photographers for any event, anytime.</p>
+                </div>
+            </section>
+
+            <section class="description">
+                <div class="description-content">
+                    <h2 class="reveal-text">Your Vision, Our Lens.</h2>
+                    <p class="reveal-text">Event Lens is the ultimate hub connecting you with talented photographers. From weddings to corporate events, discover the perfect artist to bring your vision to life. Explore portfolios, read reviews, and book with confidence.</p>
+                </div>
+            </section>
+
+            <section class="categories">
+                <h2 class="reveal-text">Explore by Category</h2>
+                <div class="category-grid">
+                    <!-- Categories are now hardcoded directly into the HTML -->
+                    <a href="gallery.html?category=Wedding" class="category-card">
+                        <img src="./category images/wedding.jpg" alt="Wedding" loading="lazy">
+                        <div class="category-name">Wedding</div>
+                    </a>
+                    <a href="gallery.html?category=Portrait" class="category-card">
+                        <img src="./category images/portrait.jpg" alt="Portrait" loading="lazy">
+                        <div class="category-name">Portrait</div>
+                    </a>
+                    <a href="gallery.html?category=Sports" class="category-card">
+                        <img src="./category images/sports.jpg" alt="Sports" loading="lazy">
+                        <div class="category-name">Sports</div>
+                    </a>
+                    <a href="gallery.html?category=Travel" class="category-card">
+                        <img src="./category images/travel.jpg" alt="Travel" loading="lazy">
+                        <div class="category-name">Travel</div>
+                    </a>
+                    <a href="gallery.html?category=Food" class="category-card">
+                        <img src="./category images/food.jpg" alt="Food" loading="lazy">
+                        <div class="category-name">Food</div>
+                    </a>
+                    <a href="gallery.html?category=Advertising" class="category-card">
+                        <img src="./category images/advertising.jpg" alt="Advertising" loading="lazy">
+                        <div class="category-name">Advertising</div>
+                    </a>
+                    <a href="gallery.html?category=Cosmic" class="category-card">
+                        <img src="./category images/cosmic.jpg" alt="Cosmic" loading="lazy">
+                        <div class="category-name">Cosmic</div>
+                    </a>
+                    <a href="gallery.html?category=Cooking" class="category-card">
+                        <img src="./category images/cooking.jpg" alt="Cooking" loading="lazy">
+                        <div class="category-name">Cooking</div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="how-it-works">
+                <h2 class="reveal-text">Simple Steps to Perfection</h2>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ri-search-line"></i></div>
+                        <h3>1. Discover</h3>
+                        <p>Browse portfolios from a diverse community of professional photographers.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ri-calendar-check-line"></i></div>
+                        <h3>2. Book</h3>
+                        <p>Select your photographer, choose a date, and book your session securely.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="ri-camera-lens-line"></i></div>
+                        <h3>3. Create</h3>
+                        <p>Collaborate with your photographer to capture your moments perfectly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="contact-info">
+                    <h2 class="reveal-text">Get in Touch</h2>
+                    <p class="reveal-text">We're here to help! Reach out with any questions or for personalized recommendations.</p>
+                    <div class="contact-details">
+                        <h4>Email Us</h4>
+                        <a href="mailto:connect@eventlens.me">connect@eventlens.me</a>
+                        <h4>Call Us</h4>
+                        <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <h3 class="reveal-text">Contact us</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First name</label>
+                            <input type="text" id="first-name" name="first-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last name</label>
+                            <input type="text" id="last-name" name="last-name">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p align="center">&copy; 2025 Event Lens. All Rights Reserved.</p><br>
+        </footer>
+    </div>
+
+    <!-- <script src="main.js"></script> -->
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="config.js"></script>
+    <script type="module" src="script.js?v=1.1"></script>
+</body>
+</html>

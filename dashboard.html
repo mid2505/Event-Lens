@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Event Lens</a>
+            <div class="nav-links">
+                <a href="index.html#home">Home</a>
+                <a href="about.html">About</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <div class="nav-right">
+                <div id="auth-links">
+                    <!-- Auth links will be injected by auth.js -->
+                </div>
+                <button id="theme-toggle-btn"><i class="ri-sun-line"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="dashboard-container">
+            <h1>My Bookings</h1>
+            <p class="dashboard-subtitle">Here are all your booking requests and their current status.</p>
+            <div id="client-bookings-list" class="bookings-list-container">
+                <!-- Bookings will be loaded here by dashboard.js -->
+                <p>Loading your bookings...</p>
+            </div>
+        </div>
+    </main>
+
+    <script type="module"  src="auth.js"></script>
+    <script type="module" src="script.js?v=1.1"></script>
+    <script type="module" src="dashboard.js"></script>
+    <script type="module" src="config.js"></script>
+</body>
+</html>
